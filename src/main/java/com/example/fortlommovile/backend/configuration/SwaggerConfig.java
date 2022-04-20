@@ -65,8 +65,8 @@ public class SwaggerConfig implements WebMvcConfigurer{
 
     private ApiInfo apiInfo(){
         return new ApiInfo(
-                "Fortlom API",
-                "Api fro fortlom developers",
+                "Fortlom Mobile API",
+                "Api for fortlom developers",
                 "1.0",
                 "http://codmind.com/terms",
                 new Contact("Javaboys", "https://fortlom-landingpage-moviles.web.app/", "javaboys@gmail.com"),
