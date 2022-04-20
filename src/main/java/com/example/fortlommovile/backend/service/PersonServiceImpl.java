@@ -8,6 +8,8 @@ import com.example.fortlommovile.shared.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import javax.validation.ConstraintViolation;
@@ -89,6 +91,14 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person updatepassword(Long userId, Person request) {
-        return null;
+        PasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
+
+        return userRepository.findById(userId).map(user ->{
+            user.setPassword(passwordEncoder.encode(request.getPassword()));
+            userRepository.save(user);
+            return user;
+
+
+        }).orElseThrow(() -> new ResourceNotFoundException("Person", userId));
     }
 }

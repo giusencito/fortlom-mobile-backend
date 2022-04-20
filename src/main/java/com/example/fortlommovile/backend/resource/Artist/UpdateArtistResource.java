@@ -5,7 +5,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UpdateArtistResource {
-    
+
 
     private Long artistfollowers;
     private String instagramLink;
