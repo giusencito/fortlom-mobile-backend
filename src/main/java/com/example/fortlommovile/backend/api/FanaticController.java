@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/fanatics")
+@CrossOrigin
+
 public class FanaticController {
 
     @Autowired

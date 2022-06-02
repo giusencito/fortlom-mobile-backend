@@ -14,6 +14,8 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
+
 public class PersonController {
 
     @Autowired
@@ -27,6 +29,15 @@ public class PersonController {
     public PersonResource getUserById(@PathVariable("userID") Long userID) {
         return mapper.toResource(personService.getById(userID));
     }
+
+    @ApiOperation(value="getUserByUsername",notes = "Esta consulta nos retorna un usuario segun su nombre de usuario")
+    @GetMapping("/users/Username/{username}")
+    public PersonResource getUserByUsername(@PathVariable("username") String username) {
+        return mapper.toResource(personService.getByUsername(username));
+    }
+
+
+
     @ApiOperation(value="updatePhoto",notes = "Esta consulta nos actualiza la foto del usuario segun el id de este")
     @PutMapping("/users/{userID}/updatephoto")
     public void updatePhoto( @PathVariable Long userID,@RequestParam("file") MultipartFile file) throws IOException {

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/artists")
+@CrossOrigin
 public class ArtistController {
     @Autowired
     private ArtistService artistService;

@@ -68,7 +68,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                         "/auth/**",
                         "/email-password/**",
                         "/myapi/**",
-                        "/v2/api-docs/**"
+                        "/v2/api-docs/**",
+                        "/**"
 
 
                 ).permitAll()

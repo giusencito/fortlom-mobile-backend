@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
+
 public class ForumController {
     @Autowired
     private ForumService forumService;

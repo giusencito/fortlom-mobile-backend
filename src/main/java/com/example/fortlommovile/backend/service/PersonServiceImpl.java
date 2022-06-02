@@ -44,6 +44,12 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    public Person getByUsername(String Username) {
+        return userRepository.findByUsername(Username)
+                .orElseThrow(() -> new ResourceNotFoundException("User", (long)0));
+    }
+
+    @Override
     public void updatephoto(Long artistId, MultipartFile file) throws IOException {
         userRepository.findById(artistId).map(post->{
             try {

@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
+
 public class ForumCommentController {
 
 
@@ -45,7 +47,9 @@ public class ForumCommentController {
     @PostMapping("/users/{userId}/forums/{forumId}/forumcomments")
     public ForumCommentResource createForumComment(@PathVariable Long userId, @PathVariable Long forumId, @RequestBody CreateForumCommentResource request) {
         ForumComment forumcomment = mapping.map(request, ForumComment.class);
-        return mapping.map(forumcommentService.create(userId, forumId, forumcomment), ForumCommentResource.class);
+        ForumCommentResource sed= mapping.map(forumcommentService.create(userId, forumId, forumcomment), ForumCommentResource.class);
+        System.out.println(sed.getRegisterdate());
+        return sed;
     }
     @ApiOperation(value = "Get all ForumComments by ForumID",notes = "Este consulta consiste en obtener  los comentarios de un foro  segun el ID de este")
     @GetMapping("/forums/{forumId}/forumcomments")

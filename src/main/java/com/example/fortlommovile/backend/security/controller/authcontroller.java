@@ -15,6 +15,8 @@ import java.text.ParseException;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin
+
 public class authcontroller {
     @Autowired
     AuthService authService;

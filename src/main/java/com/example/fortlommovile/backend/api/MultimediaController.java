@@ -22,6 +22,8 @@ import org.springframework.http.ResponseEntity.BodyBuilder;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
+
 public class MultimediaController {
     @Autowired
     private MultimediaService multimediaService;

@@ -16,6 +16,8 @@ public interface PersonService {
 
     Person getById(Long artistId);
 
+    Person getByUsername(String Username);
+
     void updatephoto(Long artistId, MultipartFile file) throws IOException;
 
     ResponseEntity<byte[]> getprofileimage(Long userID);
@@ -25,4 +27,6 @@ public interface PersonService {
     Person updateprofile(Long userId, Person request);
 
     Person updatepassword(Long userId, Person request);
+
+
 }
