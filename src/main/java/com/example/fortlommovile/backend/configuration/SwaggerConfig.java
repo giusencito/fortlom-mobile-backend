@@ -69,7 +69,7 @@ public class SwaggerConfig implements WebMvcConfigurer{
                 "Api for fortlom developers",
                 "1.0",
                 "http://codmind.com/terms",
-                new Contact("Javaboys", "https://fortlom-landingpage-moviles.web.app/", "javaboys@gmail.com"),
+                new Contact("Javaboys", "https://fortlom-landingpage-movi-81c31.web.app/", "javaboys@gmail.com"),
                 "LICENSE",
                 "LICENSE URL",
                 Collections.emptyList()
